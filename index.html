@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CasaEase Madrid | Your Local Flat Checker</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+<link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+<link href="[https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap)" rel="stylesheet">
 
 <style>
   :root {
@@ -200,4 +200,223 @@
   .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
   details { background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); padding: 24px; transition: background 0.3s; }
   details[open] { background: var(--brand-sand); }
-  summary { font-family: 'Outfit'; font-size: 1.25rem; font-weight: 600; color: var(--brand-olive); cursor: pointer;
+  summary { font-family: 'Outfit'; font-size: 1.25rem; font-weight: 600; color: var(--brand-olive); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 1.75rem; color: var(--brand-coral); font-weight: 400; transition: transform 0.3s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin-top: 16px; color: var(--text-muted); line-height: 1.6; font-size: 1.05rem; }
+
+  /* Footer Form CTA */
+  .final-cta { padding: 60px 24px; text-align: center; max-width: 600px; margin: 0 auto; }
+  .final-cta h2 { font-size: 2.5rem; margin-bottom: 16px; }
+  .final-cta p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 32px; }
+  .cta-form { display: flex; flex-direction: column; gap: 16px; }
+  .cta-form input { padding: 16px 24px; border-radius: 99px; border: 1px solid #ccc; font-size: 1rem; outline: none; font-family: inherit; }
+  
+  footer { padding: 64px 0; text-align: center; color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-flex">
+      <a href="#" class="logo">CasaEase<span>.</span></a>
+      <div class="nav-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Packages</a>
+        <a href="#faq">FAQ</a>
+        <a href="#start" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.95rem;">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>Moving to Madrid?<br>Let's check the flat first.</h1>
+        <p>Send us the apartments you love. We'll go see them in person, verify the owner, and make sure everything is legit before you pack your bags.</p>
+        
+        <form class="search-box" action="#start">
+          <input type="url" placeholder="Paste an Idealista or Fotocasa link..." required>
+          <button type="submit" class="btn btn-primary">Send us the listing</button>
+        </form>
+        <p style="margin-top: 16px; font-size: 0.9rem; padding-left: 16px;">✨ We don't sell homes. We just make sure yours is real.</p>
+      </div>
+      
+      <div class="hero-image">
+        <img src="[https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&q=80&w=2070](https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&q=80&w=2070)" alt="Sunny day in Madrid">
+        
+        <div class="chat-badge">
+          <p>"Hey! Just left the flat in Malasaña. Looks exactly like the photos, water pressure is great, and the landlord's ID checks out. You're good to go!" 🏡✨</p>
+          <span>— Your CasaEase Buddy, 2:30 PM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission / Identity Section -->
+  <section class="mission">
+    <div class="container">
+      <div class="mission-box">
+        <h3>Who we are & what we do</h3>
+        <p>We are a team of locals and former international students based in Madrid. We know how stressful it is to secure housing from thousands of miles away. <strong>CasaEase is your independent local backup.</strong> We don't act as brokers or take commissions from landlords—we work exclusively for you to verify apartments, spot red flags, and give you peace of mind before you sign a lease.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vibes / Reassurance Section -->
+  <section class="vibes" id="why-us">
+    <div class="container">
+      <div class="vibes-header">
+        <h2>Keep the excitement high.<br>Leave the stress to us.</h2>
+        <p>Moving abroad is a massive adventure. Don't let housing anxiety kill the vibe.</p>
+      </div>
+      
+      <div class="vibes-grid">
+        <div class="vibe-card">
+          <div class="vibe-icon">👀</div>
+          <h3>Reality Check</h3>
+          <p>Filters exist. We visit the apartment in person to make sure the vibe (and the plumbing) is exactly what you see on screen.</p>
+        </div>
+        <div class="vibe-card">
+          <div class="vibe-icon">🛡️</div>
+          <h3>Money Safe</h3>
+          <p>We verify the landlord's official documents against the property registry so you can transfer your deposit with zero panic.</p>
+        </div>
+        <div class="vibe-card">
+          <div class="vibe-icon">🤝</div>
+          <h3>Local Backup</h3>
+          <p>From making sure your contract is fair to helping you get your legal <em>Empadronamiento</em> sorted, we're your boots on the ground.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="steps-section" id="how-it-works">
+    <div class="container">
+      <div class="steps-header">
+        <h2>How it works</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="steps-image">
+          <img src="[https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=1949](https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=1949)" alt="Student smiling with coffee">
+        </div>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <h3>You browse & send</h3>
+              <p>Found a few flats you like online? Just copy the links and send them our way. Tell us your budget and move-in dates.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <h3>We visit & verify</h3>
+              <p>We hit the streets of Madrid. We tour the flat, check the WiFi, verify the owner's legal ID, and send you a no-nonsense video review.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <h3>You sign with confidence</h3>
+              <p>Get a clear "Green Light" from us. We'll even review your Spanish lease before you sign so you know exactly what you're agreeing to.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="pricing-header">
+        <h2>Simple, flat pricing.</h2>
+        <p style="color: rgba(255,255,255,0.8); font-size: 1.15rem;">No hidden broker fees. Just honest verification.</p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>The One-Off</h3>
+          <p>For when you found "The One"</p>
+          <div class="price-amount">€179</div>
+          <ul>
+            <li>In-person flat inspection & video</li>
+            <li>Landlord ID & Registry check</li>
+            <li>Neighborhood noise & vibe check</li>
+            <li>Clear "Go / No-Go" text report</li>
+          </ul>
+          <a href="#start" class="btn btn-outline">Choose One-Off</a>
+        </div>
+        
+        <div class="price-card featured">
+          <div class="badge">Most Popular</div>
+          <h3>The Shortlist</h3>
+          <p>When you're deciding between a few</p>
+          <div class="price-amount">€349</div>
+          <ul>
+            <li>Remote screening for up to 10 flats</li>
+            <li>In-person visits for your top 3 choices</li>
+            <li>Landlord & Registry checks for all 3</li>
+            <li>Ranked recommendation from our team</li>
+          </ul>
+          <a href="#start" class="btn btn-primary">Choose Shortlist</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <h2>Got questions?</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Do you rent or sell apartments?</summary>
+          <p>No. We are 100% independent verifiers. We do not act as real estate agents, we do not list properties, and we never take commissions from landlords. We work strictly for you to make sure the apartment you found online is real and safe to rent.</p>
+        </details>
+        <details>
+          <summary>Why can't I just trust the photos online?</summary>
+          <p>Unfortunately, the Madrid rental market has a high rate of scams targeting international students. Scammers often steal photos from legitimate listings or hide massive structural issues (like dampness, broken appliances, or heavy street noise). We go in person so you aren't surprised on move-in day.</p>
+        </details>
+        <details>
+          <summary>How long does a flat check take?</summary>
+          <p>Once you send us the listing and we make contact with the landlord or agency, we typically complete the physical visit and send your video report within 24 to 48 hours.</p>
+        </details>
+        <details>
+          <summary>Can you guarantee I'll get the flat?</summary>
+          <p>We cannot guarantee a landlord will choose you as a tenant, as they make the final decision. However, we drastically speed up the process by being local, speaking Spanish, and representing you professionally, which landlords love.</p>
+        </details>
+        <details>
+          <summary>Do you help with the Empadronamiento (City Registration)?</summary>
+          <p>Yes! During our contract review, we ensure the landlord will legally allow you to register at the address (Empadronamiento), which is required for your Spanish student visa and TIE card.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Form CTA -->
+  <section id="start" class="final-cta">
+    <h2>Ready to lock it in?</h2>
+    <p>Drop your email and the flat link below. We'll take it from there.</p>
+    <form class="cta-form" onsubmit="event.preventDefault(); alert('We got your links! We will be in touch shortly.');">
+      <input type="email" placeholder="Your email address..." required>
+      <input type="url" placeholder="Idealista or Fotocasa link..." required>
+      <button type="submit" class="btn btn-primary" style="border-radius: 99px;">Let's go</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 CasaEase Madrid. Built for students, by locals.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
