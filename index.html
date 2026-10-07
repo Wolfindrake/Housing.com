@@ -1,209 +1,821 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CasaEase Madrid | Scam-Free Student Housing & Relocation Concierge</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CasaEase Madrid — Peace of Mind, Built In</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Family: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            apple: {
+              bg: '#f5f5f7',
+              dark: '#1d1d1f',
+              muted: '#86868b',
+              blue: '#0071e3',
+              blueHover: '#0077ed',
+              cardBg: '#ffffff',
+              border: '#e5e5e7',
+              grayBg: '#f2f2f7',
+            }
+          },
+          boxShadow: {
+            'apple-sm': '0 2px 8px rgba(0, 0, 0, 0.04)',
+            'apple-card': '0 4px 20px rgba(0, 0, 0, 0.06)',
+            'apple-hover': '0 12px 32px rgba(0, 0, 0, 0.12)',
+            'apple-modal': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #0f172a;
-      --accent: #f59e0b;
-      --bg-light: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #334155;
-      --text-dark: #0f172a;
-      --border: #e2e8f0;
-      --radius: 12px;
+    body {
+      background-color: #f5f5f7;
+      color: #1d1d1f;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg-light); color: var(--text); line-height: 1.6; }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
 
-    /* Header */
-    header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-    .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
-    .logo span { color: var(--secondary); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--primary); }
-    .btn-primary { background: var(--primary); color: #fff; padding: 0.75rem 1.5rem; border-radius: var(--radius); text-decoration: none; font-weight: 600; border: none; cursor: pointer; transition: background 0.2s; }
-    .btn-primary:hover { background: var(--primary-dark); }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
 
-    /* Hero */
-    .hero { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); padding: 5rem 2rem; text-align: center; }
-    .hero-content { max-width: 800px; margin: 0 auto; }
-    .badge { background: #dbeafe; color: var(--primary-dark); padding: 0.4rem 1rem; border-radius: 50px; font-weight: 600; font-size: 0.875rem; display: inline-block; margin-bottom: 1.5rem; }
-    .hero h1 { font-size: 3rem; color: var(--text-dark); line-height: 1.2; margin-bottom: 1.5rem; font-weight: 800; }
-    .hero p { font-size: 1.25rem; color: #475569; margin-bottom: 2rem; }
+    .bento-card {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-    /* Features Grid */
-    .section { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
-    .section-title { text-align: center; margin-bottom: 3rem; }
-    .section-title h2 { font-size: 2.25rem; color: var(--text-dark); margin-bottom: 0.5rem; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .card { background: var(--card-bg); padding: 2.5rem; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-    .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .card h3 { font-size: 1.25rem; color: var(--text-dark); margin-bottom: 0.75rem; }
+    .bento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    }
 
-    /* Pricing Section */
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto; }
-    .price-card { background: #fff; border-radius: var(--radius); border: 2px solid var(--border); padding: 2.5rem; text-align: center; position: relative; }
-    .price-card.featured { border-color: var(--primary); box-shadow: 0 10px 25px -5px rgba(37,99,235,0.15); }
-    .popular-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
-    .price { font-size: 2.5rem; font-weight: 800; color: var(--text-dark); margin: 1rem 0; }
-    .price-features { list-style: none; margin: 2rem 0; text-align: left; }
-    .price-features li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
-
-    /* Form Section */
-    .form-section { background: #fff; border-radius: var(--radius); border: 1px solid var(--border); padding: 3rem; max-width: 600px; margin: 0 auto; }
-    .form-group { margin-bottom: 1.25rem; text-align: left; }
-    .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark); }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; }
-
-    /* Footer */
-    footer { background: var(--secondary); color: #94a3b8; padding: 3rem 2rem; text-align: center; }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f5f5f7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d1d1d6;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a1a1a6;
+    }
   </style>
 </head>
-<body>
+<body class="font-sans antialiased text-apple-dark selection:bg-apple-blue selection:text-white">
 
-  <!-- Navigation -->
-  <header>
-    <div class="nav-container">
-      <a href="#" class="logo">CasaEase <span>Madrid</span></a>
-      <ul class="nav-links">
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#guarantee">30-Day Guarantee</a></li>
-        <li><a href="#pricing">Packages</a></li>
-        <li><a href="#apply" class="btn-primary">Get Personal Buddy</a></li>
-      </ul>
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-apple-border/60 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center space-x-2 text-lg font-bold tracking-tight text-apple-dark hover:opacity-80 transition-opacity">
+        <span class="w-8 h-8 rounded-xl bg-apple-blue flex items-center justify-center text-white text-base shadow-sm font-extrabold">C</span>
+        <span>CasaEase <span class="text-apple-muted font-normal text-sm ml-1">Madrid</span></span>
+      </a>
+
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-apple-dark/80">
+        <a href="#overview" class="hover:text-apple-blue transition-colors">Overview</a>
+        <a href="#properties" class="hover:text-apple-blue transition-colors">Verified Homes</a>
+        <a href="#concierge" class="hover:text-apple-blue transition-colors">Concierge</a>
+        <a href="#guarantee" class="hover:text-apple-blue transition-colors">30-Day Guarantee</a>
+        <a href="#pricing" class="hover:text-apple-blue transition-colors">Packages</a>
+        <a href="#contact" class="hover:text-apple-blue transition-colors">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="flex items-center space-x-3">
+        <a href="#contact" class="bg-apple-blue hover:bg-apple-blueHover text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-full transition-all shadow-sm hover:shadow-md">
+          Speak with Concierge
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <span class="badge">🛡️ 100% Verified Housing in Madrid</span>
-      <h1>Moving to Madrid for Studies?<br>Leave Housing to Us.</h1>
-      <p>Out of your 100 relocation worries, relax and scratch this one off. Verified properties, zero scam risk, personal student representative, and 30-day move-in support.</p>
-      <a href="#apply" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Secure Your Housing Spot</a>
-    </div>
-  </section>
+  <main class="pt-24 pb-20">
 
-  <!-- How It Works -->
-  <section class="section" id="how-it-works">
-    <div class="section-title">
-      <h2>Your End-to-End Housing Shield</h2>
-      <p>We bridge the communication gap between owners, brokers, and incoming students.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon">🔍</div>
-        <h3>1. In-Person Property Audit</h3>
-        <p>We physically inspect apartments, verify structural integrity, test plumbing/Wi-Fi, and confirm owner identity so you never pay a scam broker.</p>
+    <!-- Hero Section -->
+    <section id="overview" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 text-center">
+      <div class="inline-flex items-center space-x-2 bg-white/80 border border-apple-border px-4 py-1.5 rounded-full text-xs font-semibold text-apple-blue shadow-apple-sm mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Dedicated to International Higher Education Students</span>
       </div>
-      <div class="card">
-        <div class="card-icon">🤝</div>
-        <h3>2. Dedicated Local Buddy</h3>
-        <p>A dedicated student representative greets you on arrival, guides you through lease translation, and hands over your verified keys.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📑</div>
-        <h3>3. Legal & Empadronamiento</h3>
-        <p>We ensure your rental agreement allows city registration (Empadronamiento) required for your official Spanish student residence permit (TIE).</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- 30-Day Peace of Mind Section -->
-  <section class="section" id="guarantee" style="background: #fff; border-radius: var(--radius); border: 1px solid var(--border);">
-    <div class="section-title">
-      <h2>30-Day "Relax & Settle In" Support</h2>
-      <p>Our goodwill commitment to make your first month seamless.</p>
-    </div>
-    <div style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--text);">
-      <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
-        Moving to a new country shouldn't mean stressing over broken pipes or unresponsive landlords. If any unexpected property issue arises during your first 30 days, we coordinate directly with verified technicians and owners to get it fixed immediately.
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-apple-dark max-w-4xl mx-auto leading-[1.08]">
+        Peace of mind.<br><span class="bg-gradient-to-r from-apple-blue via-indigo-600 to-sky-500 bg-clip-text text-transparent">Built in.</span>
+      </h1>
+
+      <p class="mt-6 text-lg sm:text-xl text-apple-muted max-w-2xl mx-auto leading-relaxed font-normal">
+        Arrive in Madrid with total clarity. Physically audited properties, dedicated bilingual local escorts, and complete legal onboarding—designed specifically for international students.
       </p>
-      <p style="font-weight: 700; color: var(--primary-dark);">You focus on your studies; we handle the rest.</p>
-    </div>
-  </section>
 
-  <!-- Pricing / Service Tiers -->
-  <section class="section" id="pricing">
-    <div class="section-title">
-      <h2>Transparent Service Packages</h2>
-      <p>Zero hidden broker fees. Complete transparency.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3>Essential Housing Shield</h3>
-        <div class="price">€299</div>
-        <ul class="price-features">
-          <li>✅ Physical Property Verification & Audit</li>
-          <li>✅ Owner Identity & Scam Check</li>
-          <li>✅ English Lease Agreement Review</li>
-          <li>✅ Empadronamiento Guarantee</li>
-        </ul>
-        <a href="#apply" class="btn-primary" style="display:block;">Choose Essential</a>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#properties" class="w-full sm:w-auto bg-apple-blue hover:bg-apple-blueHover text-white font-medium px-8 py-3.5 rounded-full text-base transition-all shadow-apple-sm hover:shadow-apple-hover">
+          Explore Verified Homes
+        </a>
+        <a href="#concierge" class="w-full sm:w-auto bg-white hover:bg-apple-grayBg text-apple-dark border border-apple-border font-medium px-8 py-3.5 rounded-full text-base transition-all">
+          How Concierge Works
+        </a>
       </div>
-      <div class="price-card featured">
-        <div class="popular-tag">MOST POPULAR</div>
-        <h3>VIP Student Concierge</h3>
-        <div class="price">€499</div>
-        <ul class="price-features">
-          <li>✅ Everything in Essential Shield</li>
-          <li>✅ Airport Greeting & Transfer Escort</li>
-          <li>✅ Personal Representative On-Site Handover</li>
-          <li>✅ 30-Day First-Month Maintenance Support</li>
-          <li>✅ Bank Account & Spanish SIM Setup</li>
-        </ul>
-        <a href="#apply" class="btn-primary" style="display:block;">Choose VIP Concierge</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Lead Form -->
-  <section class="section" id="apply">
-    <div class="form-section">
-      <h2 style="text-align: center; margin-bottom: 1rem;">Reserve Your Madrid Student Buddy</h2>
-      <p style="text-align: center; margin-bottom: 2rem; color: #64748b;">Tell us your arrival timeline and university, and our team will get in touch.</p>
+      <!-- Hero Key Stats Grid -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-apple-border/80">
+        <div class="p-4">
+          <div class="text-3xl font-extrabold text-apple-dark">100%</div>
+          <div class="text-xs text-apple-muted mt-1 font-medium">Scam-Proof Physical Audits</div>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl font-extrabold text-apple-dark">1:1</div>
+          <div class="text-xs text-apple-muted mt-1 font-medium">Dedicated Local Escort</div>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl font-extrabold text-apple-dark">Guaranteed</div>
+          <div class="text-xs text-apple-muted mt-1 font-medium">Empadronamiento Consent</div>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl font-extrabold text-apple-dark">30 Days</div>
+          <div class="text-xs text-apple-muted mt-1 font-medium">Move-In Maintenance Support</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apple Bento Box Section -->
+    <section id="concierge" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="text-center mb-12">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-apple-blue">The CasaEase Concierge Standard</h2>
+        <p class="text-3xl sm:text-4xl font-bold tracking-tight text-apple-dark mt-2">Everything taken care of. End-to-end.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Bento 1: Large Featured Card -->
+        <div class="md:col-span-2 bento-card bg-white rounded-3xl p-8 sm:p-10 border border-apple-border shadow-apple-card relative overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-apple-blue flex items-center justify-center text-2xl font-bold mb-6">
+              🔍
+            </div>
+            <span class="text-xs font-semibold tracking-wider text-apple-blue uppercase">Pillar 01</span>
+            <h3 class="text-2xl sm:text-3xl font-bold text-apple-dark mt-1">In-Person Property & Owner Audit</h3>
+            <p class="mt-3 text-apple-muted leading-relaxed text-base">
+              Online rental portals are filled with unvetted listings, phantom landlords, and inflated broker commissions. Before you sign or transfer a single Euro, our local team physically enters the apartment to test plumbing, inspect fiber Wi-Fi, verify owner identity deeds, and conduct an inventory check.
+            </p>
+          </div>
+          <div class="mt-8 pt-6 border-t border-apple-border flex flex-wrap gap-2 text-xs font-medium text-apple-dark/70">
+            <span class="bg-apple-grayBg px-3 py-1.5 rounded-lg">✓ Title Deed Verification</span>
+            <span class="bg-apple-grayBg px-3 py-1.5 rounded-lg">✓ Plumbing & Heating Test</span>
+            <span class="bg-apple-grayBg px-3 py-1.5 rounded-lg">✓ Speedtest Wi-Fi Audit</span>
+            <span class="bg-apple-grayBg px-3 py-1.5 rounded-lg">✓ Structural Integrity Check</span>
+          </div>
+        </div>
+
+        <!-- Bento 2: Local Buddy Escort -->
+        <div class="bento-card bg-white rounded-3xl p-8 border border-apple-border shadow-apple-card flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl font-bold mb-6">
+              🤝
+            </div>
+            <span class="text-xs font-semibold tracking-wider text-apple-blue uppercase">Pillar 02</span>
+            <h3 class="text-xl font-bold text-apple-dark mt-1">Your Personal Local Escort</h3>
+            <p class="mt-3 text-apple-muted text-sm leading-relaxed">
+              Never walk into a foreign city alone. A bilingual Madrid university alumnus is assigned to you to answer questions, escort you on arrival, translate lease agreements, and perform in-person key handoff.
+            </p>
+          </div>
+          <div class="mt-6 text-xs text-apple-blue font-semibold flex items-center gap-1">
+            <span>Bilingual Support (English / Spanish)</span> →
+          </div>
+        </div>
+
+        <!-- Bento 3: Legal & Empadronamiento -->
+        <div class="bento-card bg-white rounded-3xl p-8 border border-apple-border shadow-apple-card flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold mb-6">
+              📜
+            </div>
+            <span class="text-xs font-semibold tracking-wider text-apple-blue uppercase">Pillar 03</span>
+            <h3 class="text-xl font-bold text-apple-dark mt-1">Empadronamiento & Legal Escort</h3>
+            <p class="mt-3 text-apple-muted text-sm leading-relaxed">
+              Registering on the city padrón (*Empadronamiento*) is legally mandatory for your Spanish student residence card (TIE). We pre-verify that your landlord explicitly consents and guide you through the city council registry appointment.
+            </p>
+          </div>
+          <div class="mt-6 text-xs text-emerald-600 font-semibold flex items-center gap-1">
+            <span>TIE Student Visa Ready</span> ✓
+          </div>
+        </div>
+
+        <!-- Bento 4: 30-Day Support Guarantee (Large Span) -->
+        <div id="guarantee" class="md:col-span-2 bento-card bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-8 sm:p-10 shadow-apple-card flex flex-col justify-between relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl font-bold mb-6 backdrop-blur-md">
+              🛡️
+            </div>
+            <span class="text-xs font-semibold tracking-wider text-sky-400 uppercase">Pillar 04 — Goodwill Commitment</span>
+            <h3 class="text-2xl sm:text-3xl font-bold mt-1">30-Day "Relax & Settle In" Support</h3>
+            <p class="mt-3 text-slate-300 leading-relaxed text-base max-w-2xl">
+              Even with thorough audits, moving to a new country can surface unexpected questions. For your first 30 days after move-in, our concierge remains your direct liaison. Plumbing issue? Wi-Fi setup hiccups? Landlord miscommunication? We coordinate repairs and resolution directly so you can focus entirely on your studies.
+            </p>
+          </div>
+          <div class="mt-8 relative z-10 flex flex-wrap items-center justify-between gap-4 border-t border-slate-700/80 pt-6">
+            <div class="text-xs text-slate-400">
+              <span class="text-white font-semibold">Peace of mind guarantee:</span> We manage landlord communication so you don't have to stress.
+            </div>
+            <a href="#contact" class="bg-white hover:bg-slate-100 text-slate-900 text-xs font-bold px-5 py-2.5 rounded-full transition-all">
+              Claim Your Spot
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Verified Homes Dedicated Showcase Section -->
+    <section id="properties" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-apple-blue">Curated & Audited Residences</h2>
+          <p class="text-3xl sm:text-4xl font-bold tracking-tight text-apple-dark mt-1">Verified Student Homes in Madrid</p>
+          <p class="text-apple-muted text-sm mt-2 max-w-xl">
+            Every listing shown below has passed our 18-point physical verification, direct landlord identity check, and city registration consent audit.
+          </p>
+        </div>
+
+        <!-- Neighborhood Filter Pills -->
+        <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="neighborhood-filters">
+          <button onclick="filterProperties('all')" class="filter-btn active bg-apple-dark text-white text-xs font-semibold px-4 py-2 rounded-full transition-all">
+            All Neighborhoods
+          </button>
+          <button onclick="filterProperties('salamanca')" class="filter-btn bg-white hover:bg-apple-grayBg text-apple-dark border border-apple-border text-xs font-semibold px-4 py-2 rounded-full transition-all">
+            Salamanca
+          </button>
+          <button onclick="filterProperties('chamberi')" class="filter-btn bg-white hover:bg-apple-grayBg text-apple-dark border border-apple-border text-xs font-semibold px-4 py-2 rounded-full transition-all">
+            Chamberí
+          </button>
+          <button onclick="filterProperties('malasana')" class="filter-btn bg-white hover:bg-apple-grayBg text-apple-dark border border-apple-border text-xs font-semibold px-4 py-2 rounded-full transition-all">
+            Malasaña
+          </button>
+          <button onclick="filterProperties('moncloa')" class="filter-btn bg-white hover:bg-apple-grayBg text-apple-dark border border-apple-border text-xs font-semibold px-4 py-2 rounded-full transition-all">
+            Moncloa
+          </button>
+        </div>
+      </div>
+
+      <!-- Property Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="properties-grid">
+        
+        <!-- Property 1: Salamanca -->
+        <div class="property-card salamanca bg-white rounded-3xl overflow-hidden border border-apple-border shadow-apple-card bento-card flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" alt="Salamanca Luxury Apartment" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-emerald-700 text-[10px] font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Verified Audit Pass
+              </div>
+              <div class="absolute bottom-3 right-3 bg-apple-dark/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">
+                €1,850 <span class="text-[10px] font-normal text-slate-300">/ mo</span>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="text-xs text-apple-blue font-semibold uppercase tracking-wider">Barrio de Salamanca</div>
+              <h3 class="text-lg font-bold text-apple-dark mt-1">Serrano Executive Residence</h3>
+              <p class="text-xs text-apple-muted mt-1">5 min walk to IE Business School • High-speed Fiber</p>
+              
+              <div class="mt-4 flex items-center justify-between text-xs text-apple-dark/80 border-t border-apple-border pt-4">
+                <span>🛏️ 1 Bedroom</span>
+                <span>🚿 1 Bathroom</span>
+                <span>📐 55 m²</span>
+              </div>
+
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Aircon</span>
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Balcony</span>
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Empadronamiento ✓</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openPropertyModal(0)" class="w-full bg-apple-grayBg hover:bg-apple-blue hover:text-white text-apple-dark text-xs font-semibold py-2.5 rounded-xl transition-all">
+              View Audit & Reserve
+            </button>
+          </div>
+        </div>
+
+        <!-- Property 2: Chamberí -->
+        <div class="property-card chamberi bg-white rounded-3xl overflow-hidden border border-apple-border shadow-apple-card bento-card flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Chamberi Classic Flat" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-emerald-700 text-[10px] font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Verified Audit Pass
+              </div>
+              <div class="absolute bottom-3 right-3 bg-apple-dark/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">
+                €1,450 <span class="text-[10px] font-normal text-slate-300">/ mo</span>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="text-xs text-apple-blue font-semibold uppercase tracking-wider">Chamberí</div>
+              <h3 class="text-lg font-bold text-apple-dark mt-1">Almagro Heritage Studio</h3>
+              <p class="text-xs text-apple-muted mt-1">Direct metro line to UC3M & Moncloa Campus</p>
+              
+              <div class="mt-4 flex items-center justify-between text-xs text-apple-dark/80 border-t border-apple-border pt-4">
+                <span>🛏️ Studio</span>
+                <span>🚿 1 Bathroom</span>
+                <span>📐 42 m²</span>
+              </div>
+
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Quiet Street</span>
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Elevator</span>
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Empadronamiento ✓</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openPropertyModal(1)" class="w-full bg-apple-grayBg hover:bg-apple-blue hover:text-white text-apple-dark text-xs font-semibold py-2.5 rounded-xl transition-all">
+              View Audit & Reserve
+            </button>
+          </div>
+        </div>
+
+        <!-- Property 3: Malasaña -->
+        <div class="property-card malasana bg-white rounded-3xl overflow-hidden border border-apple-border shadow-apple-card bento-card flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Malasana Loft" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-emerald-700 text-[10px] font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Verified Audit Pass
+              </div>
+              <div class="absolute bottom-3 right-3 bg-apple-dark/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">
+                €1,600 <span class="text-[10px] font-normal text-slate-300">/ mo</span>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="text-xs text-apple-blue font-semibold uppercase tracking-wider">Malasaña</div>
+              <h3 class="text-lg font-bold text-apple-dark mt-1">San Ildefonso Modern Loft</h3>
+              <p class="text-xs text-apple-muted mt-1">Central location, double-pane soundproof windows</p>
+              
+              <div class="mt-4 flex items-center justify-between text-xs text-apple-dark/80 border-t border-apple-border pt-4">
+                <span>🛏️ 1 Bedroom</span>
+                <span>🚿 1 Bathroom</span>
+                <span>📐 48 m²</span>
+              </div>
+
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Designer Interior</span>
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">1Gbps Fiber</span>
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Empadronamiento ✓</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openPropertyModal(2)" class="w-full bg-apple-grayBg hover:bg-apple-blue hover:text-white text-apple-dark text-xs font-semibold py-2.5 rounded-xl transition-all">
+              View Audit & Reserve
+            </button>
+          </div>
+        </div>
+
+        <!-- Property 4: Moncloa -->
+        <div class="property-card moncloa bg-white rounded-3xl overflow-hidden border border-apple-border shadow-apple-card bento-card flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80" alt="Moncloa Student Suite" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-emerald-700 text-[10px] font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Verified Audit Pass
+              </div>
+              <div class="absolute bottom-3 right-3 bg-apple-dark/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">
+                €1,250 <span class="text-[10px] font-normal text-slate-300">/ mo</span>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="text-xs text-apple-blue font-semibold uppercase tracking-wider">Moncloa</div>
+              <h3 class="text-lg font-bold text-apple-dark mt-1">Princesa Campus Suite</h3>
+              <p class="text-xs text-apple-muted mt-1">10 min walk to Complutense (UCM) & UPM</p>
+              
+              <div class="mt-4 flex items-center justify-between text-xs text-apple-dark/80 border-t border-apple-border pt-4">
+                <span>🛏️ 1 Bedroom</span>
+                <span>🚿 1 Bathroom</span>
+                <span>📐 40 m²</span>
+              </div>
+
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Bright Study Desk</span>
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Central Heating</span>
+                <span class="text-[10px] bg-apple-grayBg text-apple-dark/70 px-2 py-0.5 rounded">Empadronamiento ✓</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openPropertyModal(3)" class="w-full bg-apple-grayBg hover:bg-apple-blue hover:text-white text-apple-dark text-xs font-semibold py-2.5 rounded-xl transition-all">
+              View Audit & Reserve
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Transparent Pricing / Service Packages Section -->
+    <section id="pricing" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="text-center mb-12">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-apple-blue">Transparent Investment</h2>
+        <p class="text-3xl sm:text-4xl font-bold tracking-tight text-apple-dark mt-2">Zero Hidden Fees. Complete Clarity.</p>
+        <p class="text-apple-muted text-sm mt-2 max-w-xl mx-auto">
+          Choose the concierge level that fits your relocation workflow.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <!-- Package 1: Essential Shield -->
+        <div class="bg-white rounded-3xl p-8 sm:p-10 border border-apple-border shadow-apple-card flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold text-apple-muted uppercase tracking-wider">Tier 01</div>
+            <h3 class="text-2xl font-bold text-apple-dark mt-1">Essential Relocation Shield</h3>
+            <p class="text-xs text-apple-muted mt-2">For students who have a housing lead but want zero scam risk and legal protection.</p>
+            
+            <div class="mt-6 flex items-baseline">
+              <span class="text-4xl font-extrabold text-apple-dark">€299</span>
+              <span class="text-xs text-apple-muted ml-2">one-time concierge fee</span>
+            </div>
+
+            <ul class="mt-8 space-y-3 text-sm text-apple-dark/90 border-t border-apple-border pt-6">
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-600 font-bold">✓</span> Physical Property & Plumbing Inspection
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-600 font-bold">✓</span> Direct Landlord Identity & Title Deed Verification
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-600 font-bold">✓</span> Spanish Rental Contract Review & Translation
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-600 font-bold">✓</span> Empadronamiento City Registry Clause Protection
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-apple-border">
+            <a href="#contact" class="block text-center w-full bg-apple-grayBg hover:bg-apple-dark hover:text-white text-apple-dark font-semibold text-sm py-3 rounded-full transition-all">
+              Select Essential Shield
+            </a>
+          </div>
+        </div>
+
+        <!-- Package 2: VIP Concierge -->
+        <div class="bg-gradient-to-b from-white to-blue-50/40 rounded-3xl p-8 sm:p-10 border-2 border-apple-blue shadow-apple-hover flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-apple-blue text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            Most Popular
+          </div>
+
+          <div>
+            <div class="text-xs font-bold text-apple-blue uppercase tracking-wider">Tier 02</div>
+            <h3 class="text-2xl font-bold text-apple-dark mt-1">VIP Full Concierge Escort</h3>
+            <p class="text-xs text-apple-muted mt-2">End-to-end relocation management from pre-flight to your first month in Madrid.</p>
+            
+            <div class="mt-6 flex items-baseline">
+              <span class="text-4xl font-extrabold text-apple-dark">€499</span>
+              <span class="text-xs text-apple-muted ml-2">one-time concierge fee</span>
+            </div>
+
+            <ul class="mt-8 space-y-3 text-sm text-apple-dark/90 border-t border-apple-border pt-6">
+              <li class="flex items-center gap-2">
+                <span class="text-apple-blue font-bold">✓</span> <strong>Everything in Essential Shield</strong>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-apple-blue font-bold">✓</span> Dedicated Local Student Buddy Escort
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-apple-blue font-bold">✓</span> In-Person Airport Arrival Greeting & Escort
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-apple-blue font-bold">✓</span> Key Handoff & Neighborhood Walkthrough
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-apple-blue font-bold">✓</span> <strong>30-Day Move-in Repairs & Maintenance Mediation</strong>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-apple-blue font-bold">✓</span> Spanish SIM Card & Bank Account Setup Assistance
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-apple-border">
+            <a href="#contact" class="block text-center w-full bg-apple-blue hover:bg-apple-blueHover text-white font-semibold text-sm py-3 rounded-full transition-all shadow-sm">
+              Get VIP Full Escort
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact & Inquiry Section -->
+    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-apple-border shadow-apple-card max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <span class="text-xs font-semibold uppercase tracking-widest text-apple-blue">Get Started</span>
+          <h2 class="text-3xl font-bold text-apple-dark mt-1">Connect with a Madrid Concierge</h2>
+          <p class="text-apple-muted text-sm mt-2">
+            Share your arrival timeline and target university. Our local team will respond within 2 hours.
+          </p>
+        </div>
+
+        <form id="concierge-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-semibold text-apple-dark mb-1.5">Full Name</label>
+              <input type="text" required placeholder="e.g. Alex Rivera" class="w-full bg-apple-grayBg border border-apple-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-apple-blue transition-colors" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-apple-dark mb-1.5">Email Address</label>
+              <input type="email" required placeholder="alex@university.edu" class="w-full bg-apple-grayBg border border-apple-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-apple-blue transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-semibold text-apple-dark mb-1.5">Target University in Madrid</label>
+              <select required class="w-full bg-apple-grayBg border border-apple-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-apple-blue transition-colors text-apple-dark">
+                <option value="">Select institution...</option>
+                <option value="IE">IE Business School</option>
+                <option value="UC3M">Universidad Carlos III de Madrid (UC3M)</option>
+                <option value="UCM">Universidad Complutense (UCM)</option>
+                <option value="UPM">Universidad Politécnica (UPM)</option>
+                <option value="Nebrija">Universidad Nebrija</option>
+                <option value="IESE">IESE Business School</option>
+                <option value="Other">Other Higher Education Facility</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-apple-dark mb-1.5">Target Move-In Month</label>
+              <select required class="w-full bg-apple-grayBg border border-apple-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-apple-blue transition-colors text-apple-dark">
+                <option value="August/September">August / September Intake</option>
+                <option value="January/February">January / February Intake</option>
+                <option value="Immediate">Immediate Relocation</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-apple-dark mb-1.5">Monthly Budget Range</label>
+            <select required class="w-full bg-apple-grayBg border border-apple-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-apple-blue transition-colors text-apple-dark">
+              <option value="1000-1400">€1,000 – €1,400 / month</option>
+              <option value="1400-1800">€1,400 – €1,800 / month</option>
+              <option value="1800+">€1,800+ / month</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-apple-dark mb-1.5">Special Requests or Housing Preferences</label>
+            <textarea rows="3" placeholder="Tell us about desired neighborhood, room type, or specific relocation concerns..." class="w-full bg-apple-grayBg border border-apple-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-apple-blue transition-colors"></textarea>
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <button type="submit" class="w-full sm:w-auto bg-apple-blue hover:bg-apple-blueHover text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-all shadow-sm">
+              Submit Inquiry
+            </button>
+
+            <a href="https://wa.me/34600000000" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-all">
+              <span>💬 Direct WhatsApp Concierge</span>
+            </a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Property Audit Detail Modal -->
+  <div id="property-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-apple-border shadow-apple-modal relative p-6 sm:p-8">
       
-      <form onsubmit="event.preventDefault(); alert('Thank you! Your relocation request has been submitted.');">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" placeholder="e.g. Maria Gonzalez" required />
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="maria@student.edu" required />
-        </div>
-        <div class="form-group">
-          <label>Target University in Madrid</label>
-          <select required>
-            <option value="">Select University...</option>
-            <option value="IE">IE Business School</option>
-            <option value="UC3M">Universidad Carlos III de Madrid (UC3M)</option>
-            <option value="UCM">Universidad Complutense de Madrid (UCM)</option>
-            <option value="UPM">Universidad Politécnica de Madrid</option>
-            <option value="Other">Other / Language School</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Intended Move-In Date</label>
-          <input type="date" required />
-        </div>
-        <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem;">Connect With A Local Buddy</button>
-      </form>
-    </div>
-  </section>
+      <!-- Close Button -->
+      <button onclick="closePropertyModal()" class="absolute top-6 right-6 text-apple-muted hover:text-apple-dark bg-apple-grayBg w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-colors">
+        ✕
+      </button>
 
-  <footer>
-    <p>&copy; 2026 CasaEase Madrid. Built for international students moving to Spain.</p>
+      <div id="modal-content">
+        <!-- Content inserted dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Notification Modal -->
+  <div id="toast-modal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center border border-apple-border shadow-apple-modal">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4">
+        ✓
+      </div>
+      <h3 class="text-2xl font-bold text-apple-dark">Inquiry Received</h3>
+      <p class="text-sm text-apple-muted mt-2">
+        Your Madrid relocation specialist has been assigned. Expect a WhatsApp message or email within 2 hours.
+      </p>
+      <button onclick="closeToastModal()" class="mt-6 bg-apple-blue text-white text-sm font-semibold px-6 py-2.5 rounded-full">
+        Done
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-apple-border py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between text-xs text-apple-muted gap-4">
+      <div>
+        <span class="font-bold text-apple-dark">CasaEase Madrid</span> — Ultra-Premium Relocation & Housing Concierge.
+      </div>
+      <div>
+        Designed exclusively for students at IE, UC3M, UCM, UPM, and Madrid Higher Education Institutions.
+      </div>
+      <div>
+        © 2026 CasaEase. All rights reserved.
+      </div>
+    </div>
   </footer>
 
+  <script>
+    // Property Data Store
+    const propertiesData = [
+      {
+        title: "Serrano Executive Residence",
+        neighborhood: "Barrio de Salamanca",
+        price: "€1,850",
+        stats: "1 Bedroom • 1 Bathroom • 55 m²",
+        image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+        university: "5 min walk to IE Business School",
+        auditDate: "October 4, 2026",
+        checklist: [
+          { item: "Landlord Property Deed Check", status: "Verified (Pass)" },
+          { item: "Plumbing & Hot Water Flow", status: "Passed (New Boiler)" },
+          { item: "Wi-Fi Speed Test", status: "680 Mbps Fiber" },
+          { item: "Empadronamiento Registration Consent", status: "Granted by Owner" },
+          { item: "Noise Decibel Audit", status: "32 dB (Ultra Quiet)" }
+        ]
+      },
+      {
+        title: "Almagro Heritage Studio",
+        neighborhood: "Chamberí",
+        price: "€1,450",
+        stats: "Studio Suite • 1 Bathroom • 42 m²",
+        image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80",
+        university: "Direct Metro to UC3M & Moncloa",
+        auditDate: "October 2, 2026",
+        checklist: [
+          { item: "Landlord Property Deed Check", status: "Verified (Pass)" },
+          { item: "Plumbing & Hot Water Flow", status: "Passed" },
+          { item: "Wi-Fi Speed Test", status: "500 Mbps Fiber" },
+          { item: "Empadronamiento Registration Consent", status: "Granted by Owner" },
+          { item: "Electrical Safety & AC Check", status: "Passed" }
+        ]
+      },
+      {
+        title: "San Ildefonso Modern Loft",
+        neighborhood: "Malasaña",
+        price: "€1,600",
+        stats: "1 Bedroom • 1 Bathroom • 48 m²",
+        image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
+        university: "Central Location, Metro Direct to IE & UCM",
+        auditDate: "September 28, 2026",
+        checklist: [
+          { item: "Landlord Property Deed Check", status: "Verified (Pass)" },
+          { item: "Soundproof Double Glassing", status: "Passed (Quiet Interior)" },
+          { item: "Wi-Fi Speed Test", status: "1000 Mbps (1Gbps)" },
+          { item: "Empadronamiento Registration Consent", status: "Granted by Owner" }
+        ]
+      },
+      {
+        title: "Princesa Campus Suite",
+        neighborhood: "Moncloa",
+        price: "€1,250",
+        stats: "1 Bedroom • 1 Bathroom • 40 m²",
+        image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80",
+        university: "10 min walk to Complutense (UCM) & UPM",
+        auditDate: "October 1, 2026",
+        checklist: [
+          { item: "Landlord Property Deed Check", status: "Verified (Pass)" },
+          { item: "Heating & Insulation Audit", status: "Passed" },
+          { item: "Wi-Fi Speed Test", status: "450 Mbps Fiber" },
+          { item: "Empadronamiento Registration Consent", status: "Granted by Owner" }
+        ]
+      }
+    ];
+
+    // Neighborhood Filtering Logic
+    function filterProperties(category) {
+      const cards = document.querySelectorAll('.property-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-apple-dark', 'text-white');
+        btn.classList.add('bg-white', 'text-apple-dark');
+      });
+
+      event.target.classList.remove('bg-white', 'text-apple-dark');
+      event.target.classList.add('bg-apple-dark', 'text-white');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Control Logic
+    function openPropertyModal(index) {
+      const property = propertiesData[index];
+      const modal = document.getElementById('property-modal');
+      const content = document.getElementById('modal-content');
+
+      content.innerHTML = `
+        <div class="relative h-64 rounded-2xl overflow-hidden mb-6">
+          <img src="${property.image}" class="w-full h-full object-cover" />
+          <div class="absolute bottom-3 left-3 bg-apple-dark/90 text-white text-xs font-bold px-3 py-1 rounded-full">
+            ${property.price} / month
+          </div>
+        </div>
+
+        <div class="text-xs text-apple-blue font-bold uppercase tracking-wider">${property.neighborhood}</div>
+        <h3 class="text-2xl font-bold text-apple-dark mt-1">${property.title}</h3>
+        <p class="text-xs text-apple-muted mt-1">${property.stats} • ${property.university}</p>
+
+        <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider">🛡️ CasaEase Physical Audit Report</span>
+            <span class="text-[10px] text-emerald-700">Inspected: ${property.auditDate}</span>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            ${property.checklist.map(c => `
+              <div class="flex justify-between items-center border-b border-emerald-100 pb-1.5">
+                <span class="text-slate-700">${c.item}</span>
+                <span class="font-bold text-emerald-700">✓ ${c.status}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#contact" onclick="closePropertyModal()" class="block text-center flex-1 bg-apple-blue text-white font-semibold text-xs py-3 rounded-xl hover:bg-apple-blueHover transition-colors">
+            Request Full Video Audit & Reserve
+          </a>
+          <a href="https://wa.me/34600000000" target="_blank" class="block text-center bg-emerald-500 text-white font-semibold text-xs px-6 py-3 rounded-xl hover:bg-emerald-600 transition-colors">
+            WhatsApp Concierge
+          </a>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+    }
+
+    function closePropertyModal() {
+      document.getElementById('property-modal').classList.add('hidden');
+    }
+
+    // Form Submit Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('toast-modal').classList.remove('hidden');
+    }
+
+    function closeToastModal() {
+      document.getElementById('toast-modal').classList.add('hidden');
+    }
+  </script>
 </body>
 </html>
