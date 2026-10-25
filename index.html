@@ -80,26 +80,15 @@
   .logo { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--brand-olive); }
   .logo span { color: var(--brand-coral); }
   .nav-links { display: flex; gap: 24px; align-items: center; }
-  .nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--text-dark); transition: color 0.2s; }
-  .nav-links a:hover { color: var(--brand-coral); }
-  .contact-email { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
+  .nav-links a:not(.btn) { font-weight: 600; font-size: 0.95rem; color: var(--text-dark); transition: color 0.2s; }
+  .nav-links a:not(.btn):hover { color: var(--brand-coral); }
   @media (max-width: 768px) { .nav-links { display: none; } }
 
   /* Hero Section */
   .hero { padding: 160px 0 80px; }
   .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
   .hero-content h1 { font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 24px; letter-spacing: -0.02em; }
-  .hero-content p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; max-width: 90%; }
-  
-  .search-box {
-    display: flex; gap: 8px; background: #fff; padding: 8px;
-    border-radius: 99px; box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(0,0,0,0.05);
-  }
-  .search-box input {
-    flex: 1; border: none; background: transparent; padding: 0 24px;
-    font-family: inherit; font-size: 1rem; outline: none;
-  }
+  .hero-content p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 32px; max-width: 90%; }
   .hero-image { position: relative; }
   .hero-image img { height: 600px; width: 100%; border-radius: var(--radius-lg); }
   
@@ -126,18 +115,16 @@
     box-shadow: var(--shadow-soft); max-width: 900px; margin: 0 auto 64px;
     border-left: 4px solid var(--brand-coral); text-align: center;
   }
-  .story-box p { font-size: 1.15rem; color: var(--text-dark); margin-bottom: 16px; font-style: italic; }
-  .story-box h4 { font-size: 1.1rem; color: var(--text-muted); }
+  .story-box p { font-size: 1.15rem; color: var(--text-dark); margin: 0; font-style: italic; font-weight: 500; }
 
   .team-header { text-align: center; margin-bottom: 40px; }
   .team-header h2 { font-size: clamp(2rem, 3vw, 2.5rem); margin-bottom: 16px; }
   .team-header p { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
   
-  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
   .team-member { text-align: center; background: #fff; padding: 24px 16px; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); }
   .team-img { width: 80px; height: 80px; border-radius: 50%; background: var(--brand-sand); margin: 0 auto 16px; display: block; }
-  .team-member h3 { font-size: 1.2rem; margin-bottom: 4px; }
-  .team-member p { font-size: 0.9rem; color: var(--text-muted); }
+  .team-member h3 { font-size: 1.2rem; margin: 0; }
 
   /* Vibes Section */
   .vibes { padding: 100px 0; background-color: var(--brand-sand); border-radius: var(--radius-lg); margin: 0 24px; }
@@ -229,7 +216,7 @@
     <div class="container nav-flex">
       <a href="#" class="logo">CasaEase<span>.</span></a>
       <div class="nav-links">
-        <span class="contact-email">Questions? Email us at shiv2140@student.ie.edu</span>
+        <a href="mailto:shiv2140@student.ie.edu" style="text-decoration: underline;">Questions? Email us</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="#start" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.95rem;">Get Started</a>
@@ -244,10 +231,9 @@
         <h1>Moving to Madrid?<br>Let's check the flat first.</h1>
         <p>Send us the apartments you love. We'll go see them in person, verify the owner, and make sure everything is legit before you pack your bags.</p>
         
-        <form class="search-box" id="hero-search">
-          <input type="url" placeholder="Paste an Idealista or Fotocasa link..." required>
-          <button type="submit" class="btn btn-primary">Send us the listing</button>
-        </form>
+        <div>
+          <a href="#start" class="btn btn-primary">Check my flat</a>
+        </div>
         <p style="margin-top: 16px; font-size: 0.9rem; padding-left: 16px; color: var(--text-muted);">✨ Areas covered: anywhere in Madrid.</p>
       </div>
       
@@ -266,12 +252,11 @@
   <section class="about-section">
     <div class="container">
       <div class="story-box">
-        <p>"When I moved here, I paid €790 for a room four metro stops from campus. A friend found a cheaper place one stop away through a broker, but took a big risk. CasaEase exists so you get the good deal without the risk."</p>
-        <h4>— Shiv</h4>
+        <p>"One student we interviewed lost €2,800 to a fake listing before ever seeing the flat. A €49 check would have caught it."</p>
       </div>
 
       <div class="team-header">
-        <h2>Meet the Team</h2>
+        <h2>Meet the team</h2>
         <p>We're a team of six MBA students who moved to Madrid ourselves and know how stressful flat-hunting from abroad is.</p>
       </div>
 
@@ -279,32 +264,26 @@
         <div class="team-member">
           <div class="team-img"></div>
           <h3>Shiv</h3>
-          <p>Founder & Operations</p>
         </div>
         <div class="team-member">
           <div class="team-img"></div>
           <h3>Berker</h3>
-          <p>Flat Verifier</p>
         </div>
         <div class="team-member">
           <div class="team-img"></div>
           <h3>Adriana</h3>
-          <p>Local Vibe Checker</p>
         </div>
         <div class="team-member">
           <div class="team-img"></div>
           <h3>Anand</h3>
-          <p>Process Guru</p>
         </div>
         <div class="team-member">
           <div class="team-img"></div>
           <h3>Camila</h3>
-          <p>Lease Reviewer</p>
         </div>
         <div class="team-member">
           <div class="team-img"></div>
           <h3>Arturo</h3>
-          <p>Customer Success</p>
         </div>
       </div>
     </div>
@@ -326,7 +305,7 @@
         <div class="vibe-card">
           <div class="vibe-icon">🛡️</div>
           <h3>Money Safe</h3>
-          <p>We verify the landlord's official documents against the property registry so you can transfer your deposit with much more confidence.</p>
+          <p>We check the owner against official property records so you can transfer your deposit with much more confidence.</p>
         </div>
         <div class="vibe-card">
           <div class="vibe-icon">🤝</div>
@@ -364,7 +343,7 @@
           
           <ul>
             <li>In-person visit & video walkthrough</li>
-            <li>Owner check against official property registry (nota simple)</li>
+            <li>Owner check against official property records</li>
             <li>Test of lights, water, heating and AC</li>
             <li>Condition checklist signed by the owner</li>
             <li>Clear Go / No-Go report</li>
@@ -422,7 +401,7 @@
         </details>
         <details>
           <summary>How do you check that the owner is real?</summary>
-          <p>We compare the landlord's ID with the official property registry (nota simple) to confirm they own the flat.</p>
+          <p>We compare the landlord's ID against official property records to confirm they own the flat.</p>
         </details>
         <details>
           <summary>What do you do with my personal data?</summary>
@@ -437,8 +416,7 @@
     <h2>Ready to lock it in?</h2>
     <p>Fill out the details below. We'll reply by email within 24 hours.</p>
     
-    <!-- FORMSPREE ACTION SET UP -->
-    <form class="cta-form" action="https://formspree.io/f/meoqzvla" method="POST" id="main-form">
+    <form class="cta-form" action="https://formspree.io/f/xpppqpwj" method="POST" id="main-form">
       <input type="hidden" name="_subject" value="New Flat Check Request!">
       
       <label>Full Name</label>
@@ -491,23 +469,12 @@
 
   <footer>
     <div class="container">
-      <p>Questions? Email us at shiv2140@student.ie.edu</p>
+      <p><a href="mailto:shiv2140@student.ie.edu" style="text-decoration: underline;">Questions? Email us</a></p>
       <p>&copy; 2026 CasaEase Madrid. Built for students.</p>
     </div>
   </footer>
 
   <script>
-    // Hero form passes link down to main form
-    document.getElementById('hero-search').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const url = this.querySelector('input').value;
-      const targetInput = document.getElementById('flat-links-input');
-      targetInput.value = url;
-      document.getElementById('start').scrollIntoView({behavior: 'smooth'});
-      targetInput.focus();
-    });
-
-    // Handle Formspree Submission seamlessly
     const mainForm = document.getElementById('main-form');
     mainForm.addEventListener('submit', async function(e) {
       e.preventDefault();
