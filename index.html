@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CasaEase Madrid | Your Local Flat Checker</title>
+<title>CasaEase Madrid | Check the flat before you pay</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -88,7 +88,7 @@
   .hero { padding: 160px 0 80px; }
   .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
   .hero-content h1 { font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 24px; letter-spacing: -0.02em; }
-  .hero-content p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 32px; max-width: 90%; }
+  .hero-content p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 32px; max-width: 90%; }
   .hero-image { position: relative; }
   .hero-image img { height: 600px; width: 100%; border-radius: var(--radius-lg); }
   
@@ -138,10 +138,19 @@
   .vibe-card h3 { font-size: 1.5rem; margin-bottom: 12px; }
   .vibe-card p { color: var(--text-muted); font-size: 1rem; }
 
+  /* How It Works Section */
+  .how-it-works { padding: 100px 0 60px; text-align: center; }
+  .how-it-works h2 { font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 48px; }
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto; text-align: left; }
+  .step-card { background: #fff; padding: 32px; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); border-top: 4px solid var(--brand-coral); }
+  .step-badge { display: inline-block; background: var(--brand-sand); color: var(--brand-olive); font-weight: 800; font-size: 0.9rem; padding: 4px 12px; border-radius: 99px; margin-bottom: 16px; }
+  .step-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+  .step-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.5; }
+
   /* Video Report Section */
-  .sample-report { padding: 100px 0; text-align: center; }
+  .sample-report { padding: 60px 0 100px; text-align: center; }
   .sample-report h2 { font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 16px; }
-  .sample-report > p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-inline: auto; }
+  .sample-report > p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 40px; max-width: 700px; margin-inline: auto; }
   
   /* Styled Report Card */
   .report-card { background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-hover); max-width: 700px; margin: 0 auto; text-align: left; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); }
@@ -167,9 +176,8 @@
   .badge { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--brand-coral); color: #fff; padding: 6px 16px; border-radius: 99px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; white-space: nowrap; }
   
   .price-card h3 { font-size: 1.8rem; margin-bottom: 8px; color: var(--text-dark); }
-  .price-amount { font-family: 'Outfit'; font-size: 3.5rem; font-weight: 800; margin-bottom: 16px; color: var(--brand-olive); }
+  .price-amount { font-family: 'Outfit'; font-size: 3.5rem; font-weight: 800; margin-bottom: 24px; color: var(--brand-olive); }
   .price-amount span { font-size: 1.2rem; font-weight: 500; color: var(--text-muted); }
-  .price-card > p { color: var(--text-muted); margin-bottom: 32px; font-weight: 500; }
   
   .price-card ul { margin-bottom: 32px; display: flex; flex-direction: column; gap: 16px; text-align: left; }
   .price-card li { display: flex; gap: 12px; align-items: flex-start; font-size: 1.05rem; }
@@ -223,6 +231,7 @@
     <div class="container nav-flex">
       <a href="#" class="logo">CasaEase<span>.</span></a>
       <div class="nav-links">
+        <a href="mailto:shiv2140@student.ie.edu" style="text-decoration: underline;">Questions? Email us</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="#start" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.95rem;">Get Started</a>
@@ -235,7 +244,7 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <h1>Moving to Madrid?<br>Let's check the flat first.</h1>
-        <p>Send us the apartments you love. We'll go see them in person, verify the owner, and make sure everything is legit before you pack your bags.</p>
+        <p>Send us the flat you love. We check that the owner is real, that the bank account is in their name, and that the flat matches the photos, before you pay a deposit.</p>
         
         <div>
           <a href="#start" class="btn btn-primary">Check my flat</a>
@@ -277,7 +286,7 @@
         </div>
         <div class="team-member">
           <div class="team-img"></div>
-          <h3>Adriana</h3>
+          <h3>Adrianna</h3>
         </div>
         <div class="team-member">
           <div class="team-img"></div>
@@ -311,7 +320,7 @@
         <div class="vibe-card">
           <div class="vibe-icon">🛡️</div>
           <h3>Money Safe</h3>
-          <p>We check the owner against official property records so you can transfer your deposit with much more confidence.</p>
+          <p>We check that the owner's ID, the official property record (Nota Simple) and the bank account name all match. If they don't, we tell you to stop.</p>
         </div>
         <div class="vibe-card">
           <div class="vibe-icon">🤝</div>
@@ -322,11 +331,35 @@
     </div>
   </section>
 
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <h2>How it works</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-badge">Step 1</span>
+          <h3>Send us the listing</h3>
+          <p>Paste the Idealista, Fotocasa or Facebook link.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-badge">Step 2</span>
+          <h3>Fast check</h3>
+          <p>We aim for within a few hours: we get on a live video call with the owner and check the ID, the property record and the bank account name. A landlord who refuses a video call is a red flag.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-badge">Step 3</span>
+          <h3>In-person visit</h3>
+          <p>If step 2 looks good, a trained checker visits the flat, usually within 24–48 hours depending on the landlord, and sends you photos, a video and a Go / No-Go report.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Sample Report Section -->
   <section class="sample-report">
     <div class="container">
       <h2>See what you get.</h2>
-      <p>Turnaround: we aim to send your report within 48 hours of booking, depending on when the landlord can show the flat.</p>
+      <p>Turnaround: we aim to do the fast check within a few hours, and the visit within 24–48 hours, depending on when the landlord can show the flat.</p>
       
       <div class="report-card">
         <div class="report-header">
@@ -338,13 +371,14 @@
           <span>Watch 2-minute video walkthrough</span>
         </div>
         <ul class="report-checklist">
-          <li><span class="check-icon">✓</span> <div><strong>Owner Verification:</strong> Landlord ID successfully matched with the official property registry (Nota Simple).</div></li>
+          <li><span class="check-icon">✓</span> <div><strong>Owner Verification:</strong> Landlord ID matched with official property records (Nota Simple).</div></li>
+          <li><span class="check-icon">✓</span> <div><strong>Bank Account:</strong> Account holder name matches the registered owner.</div></li>
           <li><span class="check-icon">✓</span> <div><strong>Utilities Test:</strong> Water pressure, hot water, and AC are fully functional.</div></li>
           <li><span class="check-icon">✓</span> <div><strong>Condition:</strong> No signs of dampness, mold, or structural issues.</div></li>
           <li><span class="check-icon">✓</span> <div><strong>Lease Review:</strong> Standard terms. Landlord allows Empadronamiento registration.</div></li>
         </ul>
         <div class="report-verdict">
-          <strong>Verdict: GO.</strong> The flat is exactly as advertised. Safe to proceed with the deposit.
+          <strong>Verdict: GO.</strong> No red flags found. You can decide with confidence.
         </div>
       </div>
 
@@ -360,21 +394,20 @@
       
       <div class="pricing-grid">
         <div class="price-card">
-          <div class="badge">Pilot Launch</div>
+          <div class="badge">Launch price</div>
           <h3>Flat Verification</h3>
           <div class="price-amount">€49 <span>/ flat</span></div>
-          <p>The first 5 students get their flat check FREE.</p>
           
           <ul>
             <li>In-person visit & video walkthrough</li>
+            <li>Bank account name matched to the owner</li>
             <li>Owner check against official property records</li>
             <li>Test of lights, water, heating and AC</li>
-            <li>Condition checklist signed by the owner</li>
             <li>Clear Go / No-Go report</li>
           </ul>
 
           <div class="disclaimer">
-            <strong>How payment works:</strong> You pay when you book, before we visit. If we can't get a visit with the landlord, you get a full refund.<br><br>
+            <strong>How payment works:</strong> You pay when you book, before we visit. After you submit the form, we email you a secure payment link. If we can't arrange a check, you get a full refund.<br><br>
             <em>Note: We reduce your risk, but we can't guarantee you'll get the flat.</em>
           </div>
 
@@ -393,7 +426,7 @@
       <div class="faq-list">
         <details>
           <summary>Do you rent or sell apartments?</summary>
-          <p>No. We don't list, rent or sell flats, and we take no commission from landlords. We work only for you.</p>
+          <p>No. Right now we only check flats that you find. You pay us, not the landlord, so we work for you.</p>
         </details>
         <details>
           <summary>Why can't I just trust the photos online?</summary>
@@ -401,11 +434,15 @@
         </details>
         <details>
           <summary>How long does a check take?</summary>
-          <p>We aim to send your report within 48 hours of booking. It depends on when the landlord can show the flat.</p>
+          <p>We aim to do the fast check within a few hours, and the visit within 24–48 hours, depending on when the landlord can show the flat.</p>
         </details>
         <details>
           <summary>Can you guarantee I'll get the flat?</summary>
           <p>No. The landlord decides who rents. We make sure the flat and owner are real, so you can decide with confidence.</p>
+        </details>
+        <details>
+          <summary>Who visits the flat?</summary>
+          <p>A verified IE student, trained with our standard checklist. Every visit comes with time-stamped photos and video, so you can see the proof yourself. Checkers are paid per check, never by landlords, so they have no reason to say yes to a bad flat.</p>
         </details>
         <details>
           <summary>Do you help with the Empadronamiento (City Registration)?</summary>
@@ -413,7 +450,7 @@
         </details>
         <details>
           <summary>How much does it cost and how do I pay?</summary>
-          <p>The first 5 students get their check free. After that, it's €49 per flat, paid when you book.</p>
+          <p>€49 per flat, paid when you book. Full refund if we can't arrange a check.</p>
         </details>
         <details>
           <summary>What if the landlord won't let you visit?</summary>
@@ -421,7 +458,7 @@
         </details>
         <details>
           <summary>What if you find a problem with the flat?</summary>
-          <p>We tell you clearly in your report, with a "No-Go" and the reasons, so you don't lose your deposit.</p>
+          <p>We tell you clearly in your report, with a "No-Go" and the reasons, so you can walk away before paying anything.</p>
         </details>
         <details>
           <summary>How do you check that the owner is real?</summary>
@@ -462,7 +499,24 @@
       </select>
       
       <label>Flat Link(s)</label>
-      <textarea name="flat_links" id="flat-links-input" placeholder="Paste Idealista/Fotocasa links here..." required></textarea>
+      <textarea name="flat_links" id="flat-links-input" placeholder="Paste Idealista/Fotocasa/Facebook links here..." required></textarea>
+
+      <label>Where are you right now?</label>
+      <select name="location_status" required>
+        <option value="">Select your location...</option>
+        <option value="Already in Madrid">Already in Madrid</option>
+        <option value="Abroad, moving soon">Abroad, moving soon</option>
+      </select>
+
+      <label>How did you find us?</label>
+      <select name="referral_source" required>
+        <option value="">Select how you found us...</option>
+        <option value="WhatsApp group">WhatsApp group</option>
+        <option value="Facebook group">Facebook group</option>
+        <option value="Instagram">Instagram</option>
+        <option value="A friend">A friend</option>
+        <option value="Other">Other</option>
+      </select>
       
       <div class="checkbox-group">
         <input type="checkbox" name="gdpr_consent" required>
@@ -481,7 +535,7 @@
       <ul>
         <li><strong>Payments & Refunds:</strong> Payment is required before the flat visit. If we cannot arrange a visit with the landlord or agency, you will receive a full refund.</li>
         <li><strong>Timelines:</strong> We aim to deliver reports within 48 hours, but this is strictly dependent on landlord availability.</li>
-        <li><strong>Scope of Service:</strong> We verify the property and report conditions at the time of the visit. We do not act as a broker, and we cannot guarantee you will secure the flat.</li>
+        <li><strong>Scope of Service:</strong> We verify the property and report conditions at the time of the visit. We currently only verify flats; we do not rent them out, and we cannot guarantee you will secure the flat.</li>
         <li><strong>Empadronamiento:</strong> We provide guidance and steps for municipal registration. We do not process or submit the registration on your behalf.</li>
         <li><strong>Legal Advice:</strong> We review leases to flag unclear terms, but we do not provide formal legal advice.</li>
       </ul>
@@ -513,11 +567,14 @@
           mainForm.reset();
           document.getElementById('form-success').style.display = 'block';
           mainForm.querySelector('button').style.display = 'none';
+        } else {
+          throw new Error('Submission error');
         }
       } catch (error) {
         alert("There was a problem submitting your form. Please email us directly.");
       }
     });
   </script>
+  <script data-goatcounter="https://flatcheck.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
